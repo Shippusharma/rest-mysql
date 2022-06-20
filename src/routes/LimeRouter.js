@@ -15,6 +15,6 @@ router.put('/:id', LimeController?.updateById);
 
 router.post('/:id', LimeController?.deleteById);
 
-router.post('/insert', LimeController?.InsertingNewData);
+// router.post('/insert', LimeController?.InsertingNewData);
 
 export default router;

@@ -7,7 +7,9 @@ import mysql from 'mysql';
 import cors from 'cors';
 import compression from 'compression';
 
+import UserRouter from './routes/UserRouter';
 import LimeRouter from './routes/LimeRouter';
+import DummyDataRouter from './routes/DummyDataRouter';
 
 const app = express();
 const { PORT, MYSQL_PASSWORD } = process.env;
@@ -35,7 +37,11 @@ app.get('/', (req, res) => {
   res.send('Welcome to Liam-backend');
 });
 
+app.use('/user', UserRouter);
+
 app.use('/liam', LimeRouter);
+
+app.use('/dummy', DummyDataRouter);
 
 app.listen(port, (err) => {
   if (err) throw new Error(error.message);

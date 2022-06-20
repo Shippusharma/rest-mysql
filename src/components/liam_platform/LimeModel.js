@@ -1,11 +1,9 @@
-// import GlobalController from '../../utils/GlobalController';
+// const randomId = Math.floor(Math.random() * 1000);
 
 export default {
-  insertedData: (name, age) => {
-    const randomId = Math.floor(Math.random() * 1000);
-    // const randomId = GlobalController.RandomNumber(1000);
-    return `INSERT INTO Dummy (id, name, age) VALUES (${randomId},'${name}',${age})`;
-  },
+  // insertedData: (name, age) => {
+  //   return `INSERT INTO Dummy (name, age) VALUES ('${name}',${age})`;
+  // },
 
   allData: () => {
     return 'SELECT * FROM Dummy';

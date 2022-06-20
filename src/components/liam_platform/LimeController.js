@@ -75,18 +75,18 @@ export default {
     }
   },
 
-  InsertingNewData: async (req, res) => {
-    const { name, age } = await req.body;
-    if (!name || !age) throw res.status(400).send('Please provide required Field!');
-    try {
-      const insertedData = db.query(LimeModel?.insertedData(name, age), async (err, result) => {
-        if (err) throw new Error(err.message);
-        console.log('1 record inserted', await result);
-      });
+  // InsertingNewData: async (req, res) => {
+  //   const { name, age } = req.body;
+  //   if (!name || !age) throw res.status(400).send('Please provide required Field!');
+  //   try {
+  //     const insertedData = db.query(LimeModel?.insertedData(name, age), (err, result) => {
+  //       if (err) throw new Error(err.message);
+  //       console.log('1 record inserted', result);
+  //     });
 
-      return res.status(201).json({ payload: insertedData.sql, message: 'Data Inserted Successfully!!!' });
-    } catch (error) {
-      return new Error(error.message);
-    }
-  },
+  //     return res.status(201).json({ payload: insertedData.sql, message: 'Data Inserted Successfully!!!' });
+  //   } catch (error) {
+  //     return new Error(error.message);
+  //   }
+  // },
 };
