@@ -12,4 +12,10 @@ router.get('/users', UserController?.getAllUsers);
 
 router.get('/:id', UserController?.getUser);
 
+//? //////////////////////////////// User Event/////////////////////////////////////////////////
+
+router.post('/event/create-table', UserController?.creatingNewUserEventTable);
+
+router.post('/event/insert/:id', UserController?.insertingNewUserEvent);
+
 export default router;
